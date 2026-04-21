@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Room</title>
+    <style>
+        body {
+            background-image: url(bg2.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            
+            display: flex;
+            justify-content: center;   /* Centrado horizontal */
+            align-items: center;       /* Centrado vertical */
+            height: 100vh;             /* Ocupa toda la altura de la pantalla */
+            
+            margin: 0;                 /* Quita el margen por defecto */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <label for="pass"> <h1>Introduce una contraseña segura</h1>
+            <br>
+            <input type="text" id="pass">
+        </label>
+        <button type="button" id="btnpass" onclick="comprobar()">></button>
+    </form>
+
+    <script>
+        function comprobar() {
+            let pass = document.getElementById("pass");
+            let valor = pass.value;
+
+            let errores = [];
+
+            if (valor.length < 8) {
+                errores.push("• Mínimo 8 caracteres");
+            }
+
+            if (!/[A-Z]/.test(valor)) {
+                errores.push("• Al menos una letra mayúscula");
+            }
+
+            if (!/[0-9]/.test(valor)) {
+                errores.push("• Al menos un número");
+            }
+
+            if (!/[!@#$%^&*(),.?\":{}|<>]/.test(valor)) {
+                errores.push("• Al menos un carácter especial");
+            }
+
+            if (errores.length > 0) {
+                alert("Contraseña no segura:\n\n" + errores.join("\n"));
+                pass.value = "";
+            } else {
+                alert("Contraseña segura");
+
+                let datos = {
+                    password: valor
+                };
+
+                localStorage.setItem("contraseña", JSON.stringify(datos));
+
+                //window.location.href = "prueba7.html";
+            }
+        }
+    </script>
+</body>
+</html>

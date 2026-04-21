@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Room</title>
+    <style>
+        body {
+            background-image: url(bg3.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            
+            display: flex;
+            justify-content: center;   /* Centrado horizontal */
+            align-items: center;       /* Centrado vertical */
+            height: 100vh;             /* Ocupa toda la altura de la pantalla */
+            
+            margin: 0;                 /* Quita el margen por defecto */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <label for="pass"> <h1>Introduce la contraseña usando el cifrado Ottendorf
+            <br>(palabra de 10 letras)</h1>
+            <br>
+            <input type="text" id="pass">
+        </label>
+        <button type="button" id="btnpass" onclick="comprobar()">></button>
+    </form>
+
+    <script>
+        const PASSWORD = "periferico";
+        function comprobar() {
+            let pass = document.getElementById("pass");
+            if (pass.value.trim().toLowerCase() !== PASSWORD) {
+                alert("Contraseña Incorrecta");
+                pass.value = "";
+            } else {
+                alert("Contraseña Correcta");
+                alert("Acceso Autorizado");
+                window.location.href = "prueba4.html";
+            }
+        }
+    </script>
+</body>
+</html>
