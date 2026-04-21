@@ -53,9 +53,10 @@
     </div>
 
     <form action="">
-        <h1>Introduce las credenciales (código de 4 caracteres)</h1>
+        <h1>Introduce las credenciales, usando la tabla de conversion
+            <br>(código de 4 caracteres)</h1>
         <input type="text" id="pass" maxlength="4">
-        <button type="button" id="btnpass" onclick="comprobar()">></button>
+        <button type="button" id="btnpass" onclick="comprobar()">&gt;</button>
     </form>
 
     <script>
@@ -71,7 +72,7 @@
                 alert("Contraseña Correcta");
                 alert("Acceso Autorizado");
                 setTimeout(() => {
-                    window.location.href = "prueba3.html";
+                    window.location.href = "prueba3.0.html";
                 }, 3000);
             }
         }

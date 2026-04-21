@@ -6,7 +6,7 @@
     <title>Escape Room</title>
     <style>
         body {
-            background-image: url();
+            background-image: url(../fondos/bg4.jpg);
             background-repeat: no-repeat;
             background-size: 100%;
             
@@ -41,23 +41,22 @@
         <label for="pass">Contraseña: 
             <input type="password" id="pass">
         </label>
-        <button type="button" id="btnpass" onclick="comprobar()">></button>
+        <button type="button" id="btnpass" onclick="comprobar()">&gt;</button>
     </form>
 
     <script>
+        const USER = "Admin";
         const datos = JSON.parse(localStorage.getItem("contraseña"));
         const PASSWORD = datos.password;
         function comprobar() {
+            let usr = document.getElementById("user");
             let pass = document.getElementById("pass");
-            if (pass.value.trim().toLowerCase() !== PASSWORD) {
-                alert("Contraseña Incorrecta");
+            if (pass.value !== PASSWORD || user.value !== USER) {
+                alert("Datos incorrectos");
                 pass.value = "";
+                user.value = "";
             } else {
-                alert("Contraseña Correcta");
                 alert("Acceso Autorizado");
-                setTimeout(() => {
-                    window.location.href = "prueba6.html";
-                }, 3000);
             }
         }
     </script>

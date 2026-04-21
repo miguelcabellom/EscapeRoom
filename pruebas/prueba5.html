@@ -6,39 +6,66 @@
     <title>Escape Room</title>
     <style>
         body {
-            background-image: url();
+            background-image: url(../fondos/bg4.jpg);
             background-repeat: no-repeat;
-            background-size: 100%;
-            
+            background-size: cover;
+            background-position: center;
+
             display: flex;
-            justify-content: center;   /* Centrado horizontal */
-            align-items: center;       /* Centrado vertical */
-            height: 100vh;             /* Ocupa toda la altura de la pantalla */
-            
-            margin: 0;                 /* Quita el margen por defecto */
+            flex-direction: column; /* Coloca elementos en vertical */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
             text-align: center;
+        }
 
-            input {
-                padding: 8px;
-                font-size: 16px;
-            }
+        .botones {
+            margin-bottom: 20px; /* Espacio entre botones y título */
+        }
 
-            #btnpass {
-                padding: 8px 12px;
-                font-size: 16px;
-                cursor: pointer;
-            }
+        button.colores {
+            height: 50px;
+            width: 50px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        #btnpass {
+            padding: 8px 12px;
+            font-size: 16px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
+
+    <div class="botones">
+        <button class="colores" style="background-color: pink;"></button>
+        <button class="colores" style="background-color: cyan;"></button>
+        <button class="colores" style="background-color: orange;"></button>
+        <button class="colores" style="background-color: blue;"></button>
+        <button class="colores" style="background-color: green;"></button>
+        <button class="colores" style="background-color: red;"></button>
+        <button class="colores" style="background-color: purple;"></button>
+        <button class="colores" style="background-color: yellow;"></button>
+        <button class="colores" style="background-color: black;"></button>
+    </div>
+
     <form action="">
         <label for="pass"> <h1>Introduce la contraseña con ayuda de la tabla ASCII
+            <br>ASCII-97 = a, ASCII-122 = z
             <br>(palabra de 9 letras)</h1>
             <br>
             <input type="text" id="pass">
         </label>
-        <button type="button" id="btnpass" onclick="comprobar()">></button>
+        <button type="button" id="btnpass" onclick="comprobar()">&gt;</button>
     </form>
 
     <script>
