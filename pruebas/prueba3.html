@@ -1,26 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escape Room</title>
     <style>
         body {
-            background-image: url(bg3.jpg);
+            background-image: url(../fondos/bg3.jpg);
             background-repeat: no-repeat;
-            background-size: 100%;
-            
+            background-size: cover;
+            background-position: center;
+
             display: flex;
-            justify-content: center;   /* Centrado horizontal */
-            align-items: center;       /* Centrado vertical */
-            height: 100vh;             /* Ocupa toda la altura de la pantalla */
-            
-            margin: 0;                 /* Quita el margen por defecto */
+            flex-direction: column; /* Coloca elementos en vertical */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
             text-align: center;
+        }
+
+        .botones {
+            margin-bottom: 20px; /* Espacio entre botones y título */
+        }
+
+        button.colores {
+            height: 50px;
+            width: 50px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        #btnpass {
+            padding: 8px 12px;
+            font-size: 16px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
+
+    <div class="botones">
+        <button class="colores" style="background-color: brown;"></button>
+        <button class="colores" style="background-color: purple;"></button>
+        <button class="colores" style="background-color: blue;"></button>
+        <button class="colores" style="background-color: orange;"></button>
+        <button class="colores" style="background-color: cyan;"></button>
+        <button class="colores" style="background-color: pink;"></button>
+        <button class="colores" style="background-color: yellow;"></button>
+        <button class="colores" style="background-color: green;"></button>
+        <button class="colores" style="background-color: red;"></button>
+        <button class="colores" style="background-color: fuchsia;"></button>
+    </div>
+
     <form action="">
         <label for="pass"> <h1>Introduce la contraseña usando el cifrado Ottendorf
             <br>(palabra de 10 letras)</h1>
@@ -40,7 +78,9 @@
             } else {
                 alert("Contraseña Correcta");
                 alert("Acceso Autorizado");
-                window.location.href = "prueba4.html";
+                setTimeout(() => {
+                    window.location.href = "prueba4.0.html";
+                }, 3000);
             }
         }
     </script>

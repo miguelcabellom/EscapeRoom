@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Escape Room</title>
     <style>
         body {
-            background-image: url(bg2.jpg);
+            background-image: url(../fondos/bg2.jpg);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -70,7 +70,9 @@
             } else {
                 alert("Contraseña Correcta");
                 alert("Acceso Autorizado");
-                window.location.href = "prueba3.html";
+                setTimeout(() => {
+                    window.location.href = "prueba3.html";
+                }, 3000);
             }
         }
     </script>

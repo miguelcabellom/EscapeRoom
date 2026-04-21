@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escape Room</title>
     <style>
         body {
-            background-image: url(bg1.png);
+            background-image: url(../fondos/bg1.png);
             background-repeat: no-repeat;
             background-size: 100%;
             
@@ -17,6 +17,17 @@
             
             margin: 0;                 /* Quita el margen por defecto */
             text-align: center;
+
+            input {
+                padding: 8px;
+                font-size: 16px;
+            }
+
+            #btnpass {
+                padding: 8px 12px;
+                font-size: 16px;
+                cursor: pointer;
+            }
         }
     </style>
 </head>
@@ -26,11 +37,10 @@
             <br>
             <input type="text" id="pass">
         </label>
-        <button type="button" id="btnpass" onclick="comprobar()">></button>
+        <button type="button" id="btnpass" onclick="comprobar()">&gt;</button>
     </form>
 
     <script>
-        console.log(cuenta);
         const PASSWORD = "memoria";
         function comprobar() {
             let pass = document.getElementById("pass");
@@ -40,7 +50,9 @@
             } else {
                 alert("Contraseña Correcta");
                 alert("Acceso Autorizado");
-                window.location.href = "prueba2.html";
+                setTimeout(() => {
+                    window.location.href = "prueba2.html";
+                }, 3000);
             }
         }
     </script>

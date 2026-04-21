@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Room</title>
+    <style>
+        body {
+            background-image: url();
+            background-repeat: no-repeat;
+            background-size: 100%;
+            
+            display: flex;
+            justify-content: center;   /* Centrado horizontal */
+            align-items: center;       /* Centrado vertical */
+            height: 100vh;             /* Ocupa toda la altura de la pantalla */
+            
+            margin: 0;                 /* Quita el margen por defecto */
+            text-align: center;
+
+            input {
+                padding: 8px;
+                font-size: 16px;
+            }
+
+            #btnpass {
+                padding: 8px 12px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <h1>Introduce el usuario y la contraseña:</h1>
+        <br>
+        <label for="user">Usuario: 
+            <input type="text" id="user">
+        </label>
+        <label for="pass">Contraseña: 
+            <input type="password" id="pass">
+        </label>
+        <button type="button" id="btnpass" onclick="comprobar()">></button>
+    </form>
+
+    <script>
+        const datos = JSON.parse(localStorage.getItem("contraseña"));
+        const PASSWORD = datos.password;
+        function comprobar() {
+            let pass = document.getElementById("pass");
+            if (pass.value.trim().toLowerCase() !== PASSWORD) {
+                alert("Contraseña Incorrecta");
+                pass.value = "";
+            } else {
+                alert("Contraseña Correcta");
+                alert("Acceso Autorizado");
+                setTimeout(() => {
+                    window.location.href = "prueba6.html";
+                }, 3000);
+            }
+        }
+    </script>
+</body>
+</html>

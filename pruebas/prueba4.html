@@ -1,48 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escape Room</title>
-    <style>
-        body {
-            background-image: url(bg2.jpg);
-            background-repeat: no-repeat;
-            background-size: 100%;
-            
-            display: flex;
-            justify-content: center;   /* Centrado horizontal */
-            align-items: center;       /* Centrado vertical */
-            height: 100vh;             /* Ocupa toda la altura de la pantalla */
-            
-            margin: 0;                 /* Quita el margen por defecto */
-            text-align: center;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Escape Room</title>
+
+<style>
+body{
+    background-color:white;
+    margin:0;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+/* CONTENEDOR GENERAL */
+.contenedor{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:30px;
+}
+
+/* DOS COLUMNAS DE PISTAS */
+.pistas{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    text-align:left;
+}
+
+.columna p{
+    margin:6px 0;
+    font-weight: bold;
+}
+
+input{
+    padding:8px;
+    font-size:16px;
+}
+
+#btnpass{
+    padding:8px 12px;
+    font-size:16px;
+    cursor:pointer;
+}
+</style>
 </head>
+
 <body>
+
+<div class="contenedor">
+    <div class="pistas">
+
+        <div class="columna">
+            <p>1 -> 4º letra</p>
+            <p>2 -> 9º letra</p>
+            <p>3 -> 6º letra</p>
+            <p>4 -> 5º letra</p>
+            <p>5 -> 4º letra</p>
+            <p>6 -> 2º letra</p>
+        </div>
+
+        <div class="columna">
+            <p>7 -> 1º letra</p>
+            <p>8 -> 2º letra</p>
+            <p>9 -> 4º letra</p>
+            <p>10 -> 11º letra</p>
+            <p>11 -> 7º letra</p>
+            <p>12 -> 8º letra</p>
+        </div>
+    <!--
+        1- compilar, 2- ordenador, 3- funcion, 4- codigo, 5- puerto, 6- carpeta
+        7- mascara, 8- raton, 9- disco, 10- ciberseguridad, 11- teclado, 12- conexion
+    -->
+    </div>
+    <span>Compilar, Ordenador, Funcion, Codigo, Puerto, Carpeta
+    <br><br>Mascara, Raton, Disco, Ciberseguridad, Teclado, Conexion</span>
     <form action="">
-        <label for="pass"> <h1>Introduce la contraseña resolviendo la sopa de letras
-            <br>(palabra de 12 letras)</h1>
-            <br>
+        <label for="pass">
+            <h1>
+                Introduce la clave usando las palabras de la sopa
+                <br>(palabra de 12 letras)
+            </h1>
+
             <input type="text" id="pass">
         </label>
+
         <button type="button" id="btnpass" onclick="comprobar()">></button>
     </form>
 
-    <script>
-        const PASSWORD = "programacion";
-        function comprobar() {
-            let pass = document.getElementById("pass");
-            if (pass.value.trim().toLowerCase() !== PASSWORD) {
-                alert("Contraseña Incorrecta");
-                pass.value = "";
-            } else {
-                alert("Contraseña Correcta");
-                alert("Acceso Autorizado");
-                window.location.href = "prueba4.html";
-            }
-        }
-    </script>
+</div>
+
+<script>
+const PASSWORD = "programacion";
+
+function comprobar() {
+    let pass = document.getElementById("pass");
+
+    if (pass.value.trim().toLowerCase() !== PASSWORD) {
+        alert("Contraseña Incorrecta");
+        pass.value = "";
+    } else {
+        alert("Contraseña Correcta");
+        alert("Acceso Autorizado");
+
+        setTimeout(() => {
+            window.location.href = "prueba5.html";
+        }, 3000);
+    }
+}
+</script>
+
 </body>
 </html>
